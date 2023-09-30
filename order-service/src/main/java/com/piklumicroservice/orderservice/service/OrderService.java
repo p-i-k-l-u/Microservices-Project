@@ -5,12 +5,15 @@ import com.piklumicroservice.orderservice.dto.OrderRequest;
 import com.piklumicroservice.orderservice.model.Order;
 import com.piklumicroservice.orderservice.model.OrderLineItems;
 import com.piklumicroservice.orderservice.repository.OrderRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.UUID;
 
 @Service
+@Transactional
 public class OrderService {
 
     private final OrderRepository orderRepository;
