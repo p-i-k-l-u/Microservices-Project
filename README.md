@@ -56,12 +56,12 @@ Monitor and optimize your resource usage to control costs in the cloud environme
 
 ## Tech Stack
 
-#### Containerization Technology: Docker
-#### Container Orchestration: Kubernets
-#### Continuous Integration/Continuous Deployment (CI/CD)
-#### Programming Languages and Frameworks: JAVA Spring Boot
-#### Monitoring and Logging: Grafana ( To visualize and analyze metrics)
-#### Version Control: Git, Github
+1. Containerization Technology: Docker
+2. Container Orchestration: Kubernets
+3. Continuous Integration/Continuous Deployment (CI/CD)
+4. Programming Languages and Frameworks: JAVA Spring Boot
+5. Monitoring and Logging: Grafana ( To visualize and analyze metrics)
+6. Version Control: Git, Github
 
 
 ## Conclusion
