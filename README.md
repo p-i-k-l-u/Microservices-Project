@@ -60,8 +60,7 @@ Monitor and optimize your resource usage to control costs in the cloud environme
 2. Container Orchestration: Kubernets
 3. Continuous Integration/Continuous Deployment (CI/CD)
 4. Programming Languages and Frameworks: JAVA Spring Boot
-5. Monitoring and Logging: Grafana ( To visualize and analyze metrics)
-6. Version Control: Git, Github
+5. Version Control: Git, Github
 
 
 ## Conclusion
