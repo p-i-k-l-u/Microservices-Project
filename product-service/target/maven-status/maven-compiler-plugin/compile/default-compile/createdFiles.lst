@@ -1,0 +1,10 @@
+com\pikluservices\productservice\controller\ProductController.class
+com\pikluservices\productservice\dto\ProductResponse.class
+com\pikluservices\productservice\dto\ProductRequest.class
+com\pikluservices\productservice\dto\ProductResponse$ProductResponseBuilder.class
+com\pikluservices\productservice\service\ProductService.class
+com\pikluservices\productservice\model\Product.class
+com\pikluservices\productservice\ProductServiceApplication.class
+com\pikluservices\productservice\repository\ProductRepository.class
+com\pikluservices\productservice\dto\ProductRequest$ProductRequestBuilder.class
+com\pikluservices\productservice\model\Product$ProductBuilder.class

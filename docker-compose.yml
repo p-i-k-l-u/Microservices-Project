@@ -1,0 +1,159 @@
+#version: '3'
+#services:
+#
+#  # Product Service with MongoDB
+#  product-service:
+#    image: 35dd3a12d314
+#    ports:
+#      - "8081:8081"
+#    environment:
+#      - spring.data.mongodb.uri=mongodb://localhost:27017/product-service
+#
+#  # Order Service with MySQL
+#  order-service:
+#    image: 807c638f1644
+#    ports:
+#      - "8082:8082"
+#    environment:
+#      - SPRING_DATASOURCE_URL=jdbc:mysql://order-db:3306/orders
+#      - SPRING_DATASOURCE_USERNAME=root
+#      - SPRING_DATASOURCE_PASSWORD=Pik@1903
+#
+#  # Inventory Service with MySQL
+#  inventory-service:
+#    image: 189099b5f0df
+#    ports:
+#      - "8083:8083"
+#    environment:
+#      - SPRING_DATASOURCE_URL=jdbc:mysql://inventory-db:3306/inventory
+#      - SPRING_DATASOURCE_USERNAME=root
+#      - SPRING_DATASOURCE_PASSWORD=Pik@1903
+#
+#  # Discovery Server (Eureka)
+#  discovery-server:
+#    image: ceeee10614cb
+#    ports:
+#      - "8761:8761"
+#
+#  # API Gateway
+#  api-gateway:
+#    image: ff75ce0fbad4
+#    ports:
+#      - "8080:8080"
+#    environment:
+#      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-server:8762/eureka/
+#
+#  # MongoDB for Product Service
+#  product-db:
+#    image: mongo
+#    ports:
+#      - "27017:27017"
+#    volumes:
+#      - mongo-data:/data/db
+#
+#  # MySQL for Order Service
+#  order-db:
+#    image: mysql
+#    ports:
+#      - "3306:3306"
+#    environment:
+#      - MYSQL_ROOT_PASSWORD=Pik@1903
+#      - MYSQL_DATABASE=orders
+#    volumes:
+#      - mysql-data:/var/lib/mysql
+#
+#  # MySQL for Inventory Service
+#  inventory-db:
+#    image: mysql
+#    ports:
+#      - "3307:3306"
+#    environment:
+#      - MYSQL_ROOT_PASSWORD=Pik@1903
+#      - MYSQL_DATABASE=inventory
+#    volumes:
+#      - inventory-data:/var/lib/mysql
+#
+#volumes:
+#  mongo-data:
+#  mysql-data:
+#  inventory-data:
+#--------------------------------------------------------------------------------------------------------------------------------------------
+version: '3'
+services:
+
+  # Product Service with MongoDB
+  product-service:
+    image: 35dd3a12d314
+    ports:
+      - "8081:8081"
+    environment:
+      - spring.data.mongodb.uri=mongodb://product-db:27017/product-service
+
+  # Order Service with MySQL
+  order-service:
+    image: 807c638f1644
+    ports:
+      - "8082:8082"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://order-db:3306/orders
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=Pik@1903
+
+  # Inventory Service with MySQL
+  inventory-service:
+    image: 189099b5f0df
+    ports:
+      - "8083:8083"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://inventory-db:3307/inventory
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=Pik@1903
+
+  # Discovery Server (Eureka)
+  discovery-server:
+    image: ceeee10614cb
+    ports:
+      - "8761:8761"
+
+  # API Gateway
+  api-gateway:
+    image: ff75ce0fbad4
+    ports:
+      - "8080:8080"
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://discovery-server:8762/eureka/
+
+  # MongoDB for Product Service
+  product-db:
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+  # MySQL for Order Service
+  order-db:
+    image: mysql
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=Pik@1903
+      - MYSQL_DATABASE=orders
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  # MySQL for Inventory Service
+  inventory-db:
+    image: mysql
+    ports:
+      - "3307:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=Pik@1903
+      - MYSQL_DATABASE=inventory
+    volumes:
+      - inventory-data:/var/lib/mysql
+
+volumes:
+  mongo-data:
+  mysql-data:
+  inventory-data:

@@ -1,0 +1,17 @@
+FROM openjdk:19
+
+COPY  /*.jar app.jar
+
+ENTRYPOINT ["java","-jar","/app.jar"]
+
+EXPOSE 8080
+# FROM openjdk:19
+#
+# # Create the app directory
+# WORKDIR /app
+#
+# # Copy the JAR file to the container
+# COPY target/*.jar app.jar
+#
+# # Specify the entry point
+# ENTRYPOINT ["java", "-jar", "app.jar"]
